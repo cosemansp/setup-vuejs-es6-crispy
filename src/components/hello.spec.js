@@ -1,3 +1,5 @@
+/* @flow */
+
 import { mount, shallow, mountConfig } from 'test/helper';
 import Hello from './hello';
 
@@ -8,7 +10,7 @@ describe('Hello Component', () => {
 
   it('should have a default "msg" set to "Welcome"', () => {
     const defaultData = Hello.data();
-    expect(defaultData.msg).toMatch('Welcome');
+    expect(defaultData.msg).toMatch(/Welcome/);
   });
 
   it('should renders correctly', () => {
@@ -38,7 +40,7 @@ describe('Hello Component', () => {
     const fixture = mountConfig(componentConfig);
     expect(fixture).toMatchSnapshot();
     expect(fixture.vm.$refs.component).toBeTruthy();
-    expect(fixture.vm.$refs.component.msg).toMatch('Welcome');
+    expect(fixture.vm.$refs.component.msg).toMatch(/Welcome/);
   });
 });
 

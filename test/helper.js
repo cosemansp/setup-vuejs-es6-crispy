@@ -1,3 +1,5 @@
+/* @flow */
+
 import Vue from 'vue';
 import { mount } from 'avoriaz';
 import VueWrapper from 'avoriaz/dist/VueWrapper';
@@ -10,7 +12,7 @@ import VueWrapper from 'avoriaz/dist/VueWrapper';
 //   return vm;
 // };
 
-export const mountConfig = (config) => {
+export const mountConfig = (config: ComponentOptions<Vue>) => {
   const vm = new Vue(config);
   vm.$mount();
   return new VueWrapper(vm);
@@ -24,7 +26,8 @@ export const mountConfig = (config) => {
  * https://gist.github.com/roberthamel/670640351ccac7a63630ec8b68537455
  * https://www.drydenwilliams.co.uk/code/2017/06/03/unit-testing-in-vuejs/
  * https://www.gitbook.com/book/eddyerburgh/avoriaz/details
- *
+ * https://tyronetudehope.com/2016/11/24/vue-js-vuex-testing-an-introduction/
+ * https://www.coding123.org/mock-vuex-in-vue-unit-tests/
  */
 
 const mockComponent = (name, props) => ({

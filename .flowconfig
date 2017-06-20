@@ -1,0 +1,14 @@
+[options]
+module.name_mapper='test/\(.*\)' -> '<PROJECT_ROOT>/test/\1'
+module.name_mapper='^vue$' -> '<PROJECT_ROOT>/node_modules/vue/dist/vue.esm.js'
+module.file_ext=.vue
+module.file_ext=.js
+
+[libs]
+flow
+
+[ignore]
+.*/node_modules/config-chain/test/broken.json
+.*/node_modules/vue/
+.*/node_modules/vue-router/
+.*/node_modules/invariant/

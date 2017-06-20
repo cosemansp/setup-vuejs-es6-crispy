@@ -3,7 +3,8 @@
 // More info
 // https://hackernoon.com/jest-for-all-episode-1-vue-js-d616bccbe186
 
-import pretty from 'pretty';
+// import pretty from 'pretty';
+import toDiffableHtml from 'diffable-html';
 
 // import * as cheerio from 'cheerio';
 //
@@ -36,7 +37,8 @@ const componentFixtureSerializer = {
     }
     let html = element.outerHTML;
     // html = removeVueSpecificMarkup(html);
-    const prettyHtml = pretty(html, { ocd: true });
+    // const prettyHtml = pretty(html, { ocd: true });
+    const prettyHtml = toDiffableHtml(html);
     return prettyHtml;
   },
 };
